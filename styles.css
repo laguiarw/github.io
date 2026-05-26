@@ -1116,7 +1116,6 @@ h3 {
   margin-top: 18px;
 }
 
-
 /* ========================================================================== 
    16. RESPONSIVE DESIGN: TABLETS AND PHONES
    --------------------------------------------------------------------------
@@ -1157,6 +1156,11 @@ h3 {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+
+  /* Move the UZH logo + portrait block above the intro text on mobile */
+  .intro-media {
+    order: -1;
   }
 
   .bio-copy {
@@ -1220,7 +1224,6 @@ h3 {
     max-height: 36px;
   }
 
-
   .contact-cards-single {
     max-width: none;
   }
@@ -1245,5 +1248,3 @@ h3 {
     padding: 7px 11px;
   }
 }
-
-
