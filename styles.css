@@ -86,8 +86,8 @@
   --button-gap: 12px;              /* CHANGE HERE: gap between profile/research buttons */
 
   /* Funding strip --------------------------------------------------------- */
-  --funding-top-space: 8px;        /* CHANGE HERE: space above funding block */
-  --funding-bottom-space: 34px;    /* CHANGE HERE: space below funding block */
+  --funding-top-space: 40px;        /* CHANGE HERE: space above funding block */
+  --funding-bottom-space: 60px;    /* CHANGE HERE: space below funding block */
   --funding-logo-column: 190px;    /* CHANGE HERE: width of funding-logo column */
   --funding-column-gap: 10px;      /* CHANGE HERE: gap between funding logos and funding text */
   --funding-row-gap: 46px;         /* CHANGE HERE: vertical gap between ERC and SNSF rows */
