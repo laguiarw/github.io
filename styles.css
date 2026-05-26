@@ -35,7 +35,7 @@
   /* Main colors ------------------------------------------------------------ */
   --blue: rgb(35, 79, 210);                 /* CHANGE HERE: blue used for links, active nav, paper titles */
   --lightblueBG: #eef2fc;                 /* CHANGE HERE: blue used for links, active nav, paper titles */
-  --ink: #151515;                  /* Main text color */
+  --ink: #333;                  /* Main text color */
   --muted: #777777;                /* Grey text, subtitles, metadata */
   --line: #e7e7e2;                 /* Thin dividers and subtle borders */
   --light: rgb(247, 247, 245);                /* Light background for notes and cards */
@@ -44,7 +44,8 @@
   --card-border2: rgba(48,98,255,.22);
   /* Fonts ----------------------------------------------------------------- */
   /* CHANGE HERE: main font for the whole site. */
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+  /* --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, Helvetica, sans-serif; */
+  --sans: "DM Sans", sans-serif;
 
   /* Page width and side padding ------------------------------------------ */
   --max: 1080px;                   /* CHANGE HERE: maximum width of page content */
@@ -54,7 +55,7 @@
   /* Header ---------------------------------------------------------------- */
   --header-logo-width: 44px;       /* CHANGE HERE: size of small LA logo in header */
   --header-padding-y: 20px;        /* CHANGE HERE: vertical padding in top navigation bar */
-  --nav-font-size: 16px;           /* CHANGE HERE: navigation link size */
+  --nav-font-size: 17px;           /* CHANGE HERE: navigation link size */
   --nav-gap: 20px;                 /* CHANGE HERE: space between navigation links */
 
   /* Homepage intro layout ------------------------------------------------- */
@@ -66,13 +67,13 @@
 
   /* Homepage images ------------------------------------------------------- */
   --uzh-logo-width: 170px;         /* CHANGE HERE: size of UZH logo above portrait */
-  --portrait-width: 230px;         /* CHANGE HERE: portrait size */
+  --portrait-width: 270px;         /* CHANGE HERE: portrait size */
   --portrait-radius: 5px;          /* CHANGE HERE: portrait corner roundness */
   --image-gap: 36px;               /* CHANGE HERE: gap between UZH logo and portrait */
   --portrait-shift-y: 60px;        /* CHANGE HERE: move portrait down/up. Positive = down, negative = up */
 
   /* Text sizes ------------------------------------------------------------ */
-  --body-font-size: 15px;          /* CHANGE HERE: main paragraph text size */
+  --body-font-size: 16px;          /* CHANGE HERE: main paragraph text size */
   --h1-size: 22px;                 /* CHANGE HERE: main page title size */
   --h2-size: 18px;                 /* CHANGE HERE: section heading size */
   --h3-size: 15px;                 /* CHANGE HERE: small heading size */
@@ -90,13 +91,13 @@
   --funding-column-gap: 10px;      /* CHANGE HERE: gap between funding logos and funding text */
   --funding-row-gap: 46px;         /* CHANGE HERE: vertical gap between ERC and SNSF rows */
   --funding-logo-width: 150px;     /* CHANGE HERE: default size of ERC/SNSF logos */
-  --funding-text-size: 15px;       /* CHANGE HERE: size of funding text */
+  --funding-text-size: 16px;       /* CHANGE HERE: size of funding text */
 
   /* Research page / paper cards ------------------------------------------ */
   --paper-card-padding-y: 15px;    /* CHANGE HERE: vertical padding inside each paper box */
   --paper-card-padding-x: 17px;    /* CHANGE HERE: horizontal padding inside each paper box */
   --paper-card-radius: 5px;        /* CHANGE HERE: corner roundness of paper boxes */
-  --paper-card-gap: 12px;          /* CHANGE HERE: vertical gap between paper boxes */
+  --paper-card-gap: 18px;          /* CHANGE HERE: vertical gap between paper boxes */
   --paper-card-background: rgb(209, 209, 209, 0.055); /* CHANGE HERE: background color of paper card */
 
   
@@ -118,7 +119,7 @@
   --coverage-label-width: 42px;    /* CHANGE HERE: width reserved for language labels. This is the space between language and the buttons */
   --coverage-label-size: 12px;     /* CHANGE HERE: language label size, e.g. English, German */
   --coverage-label-weight: 650;    /* CHANGE HERE: language label boldness */
-  --coverage-box-bg: rgba(35, 79, 210, 0.025);      /*  CHANGE HERE: subtle background behind media coverage links */
+  --coverage-box-bg: rgba(35, 79, 210, 0.02);      /*  CHANGE HERE: subtle background behind media coverage links */
   /* --coverage-box-bg: rgb(209, 209, 209, 0.035);       CHANGE HERE: subtle background behind media coverage links */
   --coverage-box-border: rgba(35, 79, 210, 0.14);    /* CHANGE HERE: subtle border around media coverage block */
   --coverage-box-left-border: rgba(35, 79, 210, 0.35); /* CHANGE HERE: slightly stronger left accent for media block */
@@ -270,8 +271,8 @@ h3 {
 }
 
 .logo-name {
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 19px;
+  font-weight: 300;
 }
 
 .nav {
@@ -290,12 +291,14 @@ h3 {
   line-height: 1.2;
   padding: 6px 0 5px;
   border-bottom: 2px solid transparent;
+  font-variant: small-caps;
+
 }
 
 .nav a:hover,
 .nav a.active {
   color: #333;
-  border-bottom-color: var(--blue); /* Blue underline under active/hovered menu item */
+  /* border-bottom-color: var(--blue);*/  /* Blue underline under active/hovered menu item */
 }
 
 .nav a.active {
@@ -468,7 +471,7 @@ h3 {
 .funding-text-cell p {
   margin: 0;
   font-size: var(--funding-text-size);
-  line-height: 1.45;
+  line-height: 1.6; /* change spaceing between lines*/
   color: var(--ink);
 }
 
@@ -600,7 +603,7 @@ h3 {
   padding: 14px 18px;
   margin-top: 26px;
   border-radius: 5px;
-  max-width: 300px;
+  max-width: 400px;
 }
 
 
@@ -658,7 +661,7 @@ h3 {
   padding: var(--paper-card-padding-y) var(--paper-card-padding-x);
   border: 1px solid var(--card-border2);
   /* border-left: 2px solid rgba(35, 79, 210, 0.35); */
-  border-left: 2px solid var(--card-border2);
+  /* border-left: 2px solid var(--card-border2); */
   border-radius: var(--paper-card-radius);
   /* background: var(--card-bg); */
   /* background: var(--light); */
@@ -778,10 +781,12 @@ h3 {
   align-items: center;
   justify-content: center;
   padding: var(--paper-link-padding-y) var(--paper-link-padding-x);
-  border: 1px solid var(--blue);
+  /* border: 1px solid var(--blue); */
+  border: 1px solid var(--coverage-button-border);
   border-radius: var(--paper-link-radius);
   background: #fff;
-  color: var(--blue);
+  /* color: var(--blue); */
+  color: var(--coverage-button-color);
   text-decoration: none;
   font-size: var(--paper-link-font-size);
   font-weight: 500;
@@ -939,6 +944,7 @@ h3 {
   gap: var(--coverage-group-gap);
   margin-top: 12px;
   padding: 10px 12px;
+  border-radius: var(--paper-card-radius);
 
   border: 1px solid var(--coverage-box-border);
   /* border-left: 2px solid var(--coverage-box-left-border); */
@@ -992,6 +998,8 @@ h3 {
   color: var(--coverage-button-color);
   font-size: 12px;
   font-weight: 500;
+  border-radius: 150px;
+  
 }
 
 .coverage-groups .paper-link-button.secondary {
