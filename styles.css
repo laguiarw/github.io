@@ -98,7 +98,7 @@
   --paper-card-padding-y: 15px;    /* CHANGE HERE: vertical padding inside each paper box */
   --paper-card-padding-x: 17px;    /* CHANGE HERE: horizontal padding inside each paper box */
   --paper-card-radius: 5px;        /* CHANGE HERE: corner roundness of paper boxes */
-  --paper-card-gap: 18px;          /* CHANGE HERE: vertical gap between paper boxes */
+  --paper-card-gap: 20px;          /* CHANGE HERE: vertical gap between paper boxes */
   --paper-card-background: rgb(209, 209, 209, 0.055); /* CHANGE HERE: background color of paper card */
 
   
@@ -106,7 +106,7 @@
   --paper-title-weight: 550;       /* CHANGE HERE: paper title boldness */
   --paper-meta-size: 14.5px;       /* CHANGE HERE: authors/journal text size */
   --journal-logo-width: 96px;      /* CHANGE HERE: journal logo width inside paper card */
-  --journal-logo-height: 82px;     /* CHANGE HERE: journal logo max height inside paper card */
+  --journal-logo-height: 100px;     /* CHANGE HERE: journal logo max height inside paper card */
 
   /* Paper-card action buttons -------------------------------------------- */
   --paper-link-font-size: 12.5px;  /* CHANGE HERE: DOI/WP button text size inside paper cards */
@@ -223,7 +223,7 @@ h3 {
 }
 
 .prose {
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .meta {
@@ -393,6 +393,12 @@ h3 {
 .bio-copy p {
   font-size: var(--body-font-size);
   line-height: 1.62;
+}
+
+.bio-copy p,
+.prose p {
+  text-align: justify;
+  /* hyphens: auto; */
 }
 
 .intro-side,
@@ -764,6 +770,8 @@ h3 {
   width: 100%;
 }
 
+
+
 /* Paper-card action buttons -----------------------------------------------
    These small pill-shaped links sit inside each paper card, usually below the
    journal/author line. Use them for DOI, WP version, SSRN, NBER, CESifo, etc.
@@ -780,14 +788,18 @@ h3 {
   align-items: center;
   flex-wrap: wrap;
   gap: var(--paper-link-gap);
-  margin-top: 10px;
+  margin-top: 25px; /* CHANGE HERE: moves DOI/WP buttons lower */
 }
+
 
 .paper-link-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--paper-link-padding-y) var(--paper-link-padding-x);
+
+  min-height: 24px;
+  padding: 0 var(--paper-link-padding-x);
+
   /* border: 1px solid var(--blue); */
   border: 1px solid var(--coverage-button-border);
   border-radius: var(--paper-link-radius);
@@ -795,10 +807,12 @@ h3 {
   /* color: var(--blue); */
   color: var(--coverage-button-color);
   text-decoration: none;
+
   font-size: var(--paper-link-font-size);
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1;
 }
+
 
 .paper-link-button:hover {
   color: var(--blue);
