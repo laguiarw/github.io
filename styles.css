@@ -1172,13 +1172,49 @@ h3 {
     gap: 28px;
   }
 
-  /* Move the UZH logo + portrait block above the intro text on mobile */
+  /* ------------------------------------------------------------
+     MOBILE HOMEPAGE ORDER
+     This lets the name/title appear first, then the UZH logo
+     and portrait, then the biography text.
+  ------------------------------------------------------------ */
+
+  .intro-text {
+    display: contents;
+  }
+
+  .intro-text > h1 {
+    order: 1;
+    grid-column: 1;
+  }
+
+  .intro-text > .subtitle {
+    order: 2;
+    grid-column: 1;
+    margin-bottom: 0;
+  }
+
   .intro-media {
-    order: -1;
+    order: 3;
+    grid-column: 1;
+  }
+
+  .intro-text > .intro-rule {
+    order: 4;
+    grid-column: 1;
   }
 
   .bio-copy {
-    margin-top: 40px;
+    order: 5;
+    grid-column: 1;
+    margin-top: 28px;
+  }
+
+  .funding-strip {
+    order: 6;
+  }
+
+  .profile-buttons {
+    order: 7;
   }
 
   .intro-side,
@@ -1214,9 +1250,20 @@ h3 {
     gap: 2px;
   }
 
+  /* ------------------------------------------------------------
+     MOBILE RESEARCH CARDS
+     Journal logo moves to lower-right corner of the card.
+  ------------------------------------------------------------ */
+
   .paper-card {
     grid-template-columns: 1fr;
     gap: 10px;
+    position: relative;
+  }
+
+  /* Only add extra bottom space when the card actually has a logo */
+  .paper-card:has(.paper-logo-cell) {
+    padding-bottom: 72px;
   }
 
   .coverage-group {
@@ -1229,13 +1276,18 @@ h3 {
   }
 
   .paper-logo-cell {
-    justify-self: start;
+    position: absolute;
+    right: var(--paper-card-padding-x);
+    bottom: var(--paper-card-padding-y);
+
+    justify-self: auto;
     min-width: 0;
+    width: auto;
   }
 
   .journal-logo {
-    max-width: 90px;
-    max-height: 36px;
+    max-width: 70px;
+    max-height: 52px;
   }
 
   .contact-cards-single {
