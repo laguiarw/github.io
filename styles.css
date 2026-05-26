@@ -172,15 +172,15 @@ p {
    ========================================================================== */
 
 a {
-  color: var(--ink);
+  color: var(--ink); 
   text-decoration-color: rgba(35, 79, 210, 0.35);
   text-underline-offset: 3px;
 }
 
-a:hover {
-  color: var(--blue);
-  text-decoration-color: var(--blue);
-}
+/* a:hover { */
+  /* color: var(--blue); */
+  /* text-decoration-color: var(--blue); */
+/* } */
 
 h1,
 h2,
@@ -217,13 +217,15 @@ h3 {
 
 .page-intro {
   font-size: 16px;
-  color: var(--muted);
+  color: var(--ink);
   margin: -2px 0 24px;
-  max-width: 720px;
+  max-width: 760px;
 }
 
 .prose {
   max-width: 1000px;
+  margin: -30px 0 24px;
+
 }
 
 .meta {
@@ -274,7 +276,7 @@ h3 {
 
 .logo-name {
   font-size: 19px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .nav {
