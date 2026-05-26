@@ -54,7 +54,7 @@
   /* Header ---------------------------------------------------------------- */
   --header-logo-width: 44px;       /* CHANGE HERE: size of small LA logo in header */
   --header-padding-y: 20px;        /* CHANGE HERE: vertical padding in top navigation bar */
-  --nav-font-size: 14px;           /* CHANGE HERE: navigation link size */
+  --nav-font-size: 16px;           /* CHANGE HERE: navigation link size */
   --nav-gap: 20px;                 /* CHANGE HERE: space between navigation links */
 
   /* Homepage intro layout ------------------------------------------------- */
