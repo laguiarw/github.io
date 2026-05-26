@@ -1185,7 +1185,7 @@ h3 {
   .home-intro-combined {
     grid-template-columns: minmax(0, 1fr) auto;
     column-gap: 16px;
-    row-gap: 14px;
+    row-gap: 4px; /* CHANGE HERE: space between Luis Aguiar and subtitle */
   }
 
   /* Allows h1, subtitle, rule, and bio-copy to be positioned separately */
