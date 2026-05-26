@@ -1256,66 +1256,55 @@ h3 {
 
   /* ------------------------------------------------------------
      MOBILE RESEARCH CARDS
+     Cards with journal logos use two columns:
+     - left: paper text and buttons
+     - right: journal logo
+     Media coverage, when present, spans below both.
   ------------------------------------------------------------ */
 
   .paper-card {
     grid-template-columns: 1fr;
     gap: 10px;
     position: relative;
-  }
-
-  /* Cards with logo but WITHOUT media coverage:
-     keep the logo in the lower-right corner. */
-  .paper-card:has(.paper-logo-cell):not(:has(> .coverage-groups)) {
-    padding-bottom: 72px;
-  }
-
-  .paper-card:has(.paper-logo-cell):not(:has(> .coverage-groups)) .paper-logo-cell {
-    position: absolute;
-    right: var(--paper-card-padding-x);
-    bottom: var(--paper-card-padding-y);
-
-    justify-self: auto;
-    min-width: 0;
-    width: auto;
-  }
-
-  /* Cards WITH media coverage:
-     text/buttons on the left, logo on the right,
-     media coverage box below both. */
-  .paper-card:has(> .coverage-groups) {
-    grid-template-columns: minmax(0, 1fr) auto;
     padding-bottom: var(--paper-card-padding-y);
   }
 
-  .paper-card:has(> .coverage-groups) .paper-card-main {
+  /* Cards WITH a journal logo */
+  .paper-card:has(.paper-logo-cell) {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 12px;
+    row-gap: 10px;
+  }
+
+  .paper-card:has(.paper-logo-cell) .paper-card-main {
     grid-column: 1;
     grid-row: 1;
   }
 
-  .paper-card:has(> .coverage-groups) .paper-logo-cell {
+  .paper-card:has(.paper-logo-cell) .paper-logo-cell {
     position: static;
     grid-column: 2;
     grid-row: 1;
 
-    align-self: end;
+    align-self: end;       /* CHANGE HERE: use `start` if you want logo near the title */
     justify-self: end;
 
     min-width: 0;
     width: auto;
-    margin-left: 12px;
-  }
-
-  .paper-card:has(> .coverage-groups) > .coverage-groups {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    width: 100%;
-    margin-top: 8px;
+    margin-left: 8px;
   }
 
   .journal-logo {
     max-width: 70px;
     max-height: 52px;
+  }
+
+  /* Media coverage spans the full card width below text + logo */
+  .paper-card > .coverage-groups {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    margin-top: 8px;
   }
 
   .coverage-group {
