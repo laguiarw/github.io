@@ -1165,8 +1165,6 @@ h3 {
     padding-top: 40px;
   }
 
-  .intro-grid,
-  .home-intro-combined,
   .split-section,
   .contact-grid {
     grid-template-columns: 1fr;
@@ -1176,8 +1174,8 @@ h3 {
   /* ------------------------------------------------------------
      MOBILE HOMEPAGE ORDER
      Order becomes:
-     1. Name/title
-     2. UZH logo + portrait
+     1. Name/title on the left + UZH logo on the upper right
+     2. Portrait
      3. Biography text
      4. Funding
      5. Buttons
@@ -1185,62 +1183,74 @@ h3 {
 
   .intro-grid,
   .home-intro-combined {
-    row-gap: 14px; /* CHANGE HERE: reduces vertical space between name/title and UZH logo */
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 16px;
+    row-gap: 14px;
   }
 
+  /* Allows h1, subtitle, rule, and bio-copy to be positioned separately */
   .intro-text {
+    display: contents;
+  }
+
+  /* Allows UZH logo and portrait to be positioned separately */
+  .intro-media {
     display: contents;
   }
 
   .intro-text > h1 {
     order: 1;
     grid-column: 1;
+    grid-row: 1;
   }
 
   .intro-text > .subtitle {
     order: 2;
     grid-column: 1;
+    grid-row: 2;
     margin-bottom: 0;
   }
 
-  .intro-media {
+  /* UZH logo: upper-right corner, next to the name/title area */
+  .uzh-logo {
+    order: 1;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    justify-self: end;
+    align-self: start;
+
+    width: min(150px, 36vw); /* CHANGE HERE: mobile UZH logo size */
+    margin-top: 2px;
+  }
+
+  /* Portrait: below the title/logo area, centered */
+  .hero-portrait {
     order: 3;
-    grid-column: 1;
+    grid-column: 1 / -1;
+    justify-self: center;
+    transform: none;
+    margin-top: 14px;
   }
 
   .intro-text > .intro-rule {
     order: 4;
-    grid-column: 1;
+    grid-column: 1 / -1;
   }
 
   .bio-copy {
     order: 5;
-    grid-column: 1;
+    grid-column: 1 / -1;
     margin-top: 28px;
   }
 
   .funding-strip {
     order: 6;
+    grid-column: 1 / -1;
   }
 
   .profile-buttons {
     order: 7;
-  }
-
-  .intro-side,
-  .intro-media {
-    align-items: stretch;
-    gap: 18px; /* CHANGE HERE: space between UZH logo and portrait on mobile */
-  }
-
-  .uzh-logo {
-    align-self: flex-end; /* Moves UZH logo to the upper right */
-    width: min(58%, var(--uzh-logo-width));
-  }
-
-  .hero-portrait {
-    align-self: center;
-    transform: none; /* Avoid awkward vertical shift on small screens */
+    grid-column: 1 / -1;
   }
 
   .funding-row {
@@ -1297,7 +1307,7 @@ h3 {
     grid-column: 2;
     grid-row: 1;
 
-    align-self: end;
+    align-self: center;
     justify-self: end;
 
     min-width: 0;
