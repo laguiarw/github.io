@@ -1171,51 +1171,55 @@ h3 {
     gap: 28px;
   }
 
-  /* ------------------------------------------------------------
-     MOBILE HOMEPAGE ORDER
-     Order becomes:
-     1. Name/title on the left + UZH logo on the upper right
+
+  /* -----------------------------------------------------------------------
+     MOBILE HOMEPAGE
+     -----------------------------------------------------------------------
+     Order:
+     1. Name/title on the left, UZH logo on the upper right
      2. Portrait
      3. Biography text
      4. Funding
      5. Buttons
-  ------------------------------------------------------------ */
+  ----------------------------------------------------------------------- */
 
   .intro-grid,
   .home-intro-combined {
     grid-template-columns: minmax(0, 1fr) auto;
     column-gap: 16px;
-    row-gap: 4px; /* CHANGE HERE: space between Luis Aguiar and subtitle */
+    row-gap: 4px; /* CHANGE HERE: space between name and subtitle */
   }
 
-  /* Allows h1, subtitle, rule, and bio-copy to be positioned separately */
-  .intro-text {
+  /* Allows the h1, subtitle, rule, and bio text to be positioned separately */
+  .home-intro-combined .intro-text {
     display: contents;
   }
 
-  /* Allows UZH logo and portrait to be positioned separately */
-  .intro-media {
+  /* Allows the UZH logo and portrait to be positioned separately */
+  .home-intro-combined .intro-media {
     display: contents;
   }
 
-  .intro-text > h1 {
+  .home-intro-combined .intro-text > h1 {
     order: 1;
     grid-column: 1;
     grid-row: 1;
+    margin-bottom: 0;
   }
 
-  .intro-text > .subtitle {
+  .home-intro-combined .intro-text > .subtitle {
     order: 2;
     grid-column: 1;
     grid-row: 2;
     margin-bottom: 0;
   }
 
-  /* UZH logo: upper-right corner, next to the name/title area */
-  .uzh-logo {
+  /* UZH logo: upper-right corner on mobile */
+  .home-intro-combined .uzh-logo {
     order: 1;
     grid-column: 2;
     grid-row: 1 / span 2;
+
     justify-self: end;
     align-self: start;
 
@@ -1223,21 +1227,22 @@ h3 {
     margin-top: 2px;
   }
 
-  /* Portrait: below the title/logo area, centered */
-  .hero-portrait {
+  /* Portrait: centered below the name/title/logo area */
+  .home-intro-combined .hero-portrait {
     order: 3;
     grid-column: 1 / -1;
+
     justify-self: center;
     transform: none;
-    margin-top: 14px;
+    margin-top: 18px;
   }
 
-  .intro-text > .intro-rule {
+  .home-intro-combined .intro-text > .intro-rule {
     order: 4;
     grid-column: 1 / -1;
   }
 
-  .bio-copy {
+  .home-intro-combined .bio-copy {
     order: 5;
     grid-column: 1 / -1;
     margin-top: 28px;
@@ -1253,6 +1258,9 @@ h3 {
     grid-column: 1 / -1;
   }
 
+
+  /* Funding section on mobile -------------------------------------------- */
+
   .funding-row {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -1267,6 +1275,9 @@ h3 {
     font-size: var(--funding-text-size);
   }
 
+
+  /* Generic one-column layouts on mobile --------------------------------- */
+
   .columns {
     grid-template-columns: 1fr;
   }
@@ -1276,13 +1287,15 @@ h3 {
     gap: 2px;
   }
 
-  /* ------------------------------------------------------------
+
+  /* -----------------------------------------------------------------------
      MOBILE RESEARCH CARDS
-     Cards with journal logos use two columns:
+     -----------------------------------------------------------------------
+     On mobile, cards with journal logos use two columns:
      - left: paper text and buttons
      - right: journal logo
      Media coverage, when present, spans below both.
-  ------------------------------------------------------------ */
+  ----------------------------------------------------------------------- */
 
   .paper-card {
     grid-template-columns: 1fr;
@@ -1291,6 +1304,7 @@ h3 {
     padding-bottom: var(--paper-card-padding-y);
   }
 
+  /* Cards with a journal logo */
   .paper-card:has(.paper-logo-cell) {
     grid-template-columns: minmax(0, 1fr) auto;
     column-gap: 12px;
@@ -1307,8 +1321,8 @@ h3 {
     grid-column: 2;
     grid-row: 1;
 
-    align-self: center;
     justify-self: end;
+    align-self: start; /* CHANGE HERE: use center/end if you want it lower */
 
     min-width: 0;
     width: auto;
@@ -1320,9 +1334,10 @@ h3 {
     max-height: 52px;
   }
 
+  /* Media coverage box spans full card width below text + journal logo */
   .paper-card > .coverage-groups {
     grid-column: 1 / -1;
-    grid-row: 2;
+    grid-row: auto;
     width: 100%;
     margin-top: 8px;
   }
@@ -1336,6 +1351,9 @@ h3 {
     margin-top: 0;
   }
 
+
+  /* Contact page on mobile ------------------------------------------------ */
+
   .contact-cards-single {
     max-width: none;
   }
@@ -1345,6 +1363,7 @@ h3 {
     gap: 2px;
   }
 }
+
 
 @media (max-width: 520px) {
   :root {
