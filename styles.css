@@ -1130,6 +1130,7 @@ h3 {
   margin-top: 18px;
 }
 
+
 /* ========================================================================== 
    16. RESPONSIVE DESIGN: TABLETS AND PHONES
    --------------------------------------------------------------------------
@@ -1182,6 +1183,11 @@ h3 {
      5. Buttons
   ------------------------------------------------------------ */
 
+  .intro-grid,
+  .home-intro-combined {
+    row-gap: 14px; /* CHANGE HERE: reduces vertical space between name/title and UZH logo */
+  }
+
   .intro-text {
     display: contents;
   }
@@ -1223,12 +1229,18 @@ h3 {
 
   .intro-side,
   .intro-media {
-    align-items: center;
-    gap: 24px;
+    align-items: stretch;
+    gap: 18px; /* CHANGE HERE: space between UZH logo and portrait on mobile */
+  }
+
+  .uzh-logo {
+    align-self: flex-end; /* Moves UZH logo to the upper right */
+    width: min(58%, var(--uzh-logo-width));
   }
 
   .hero-portrait {
-    transform: none;
+    align-self: center;
+    transform: none; /* Avoid awkward vertical shift on small screens */
   }
 
   .funding-row {
@@ -1269,7 +1281,6 @@ h3 {
     padding-bottom: var(--paper-card-padding-y);
   }
 
-  /* Cards WITH a journal logo */
   .paper-card:has(.paper-logo-cell) {
     grid-template-columns: minmax(0, 1fr) auto;
     column-gap: 12px;
@@ -1286,7 +1297,7 @@ h3 {
     grid-column: 2;
     grid-row: 1;
 
-    align-self: end;       /* CHANGE HERE: use `start` if you want logo near the title */
+    align-self: end;
     justify-self: end;
 
     min-width: 0;
@@ -1299,7 +1310,6 @@ h3 {
     max-height: 52px;
   }
 
-  /* Media coverage spans the full card width below text + logo */
   .paper-card > .coverage-groups {
     grid-column: 1 / -1;
     grid-row: 2;
