@@ -90,7 +90,7 @@
   --funding-bottom-space: 60px;    /* CHANGE HERE: space below funding block */
   --funding-logo-column: 190px;    /* CHANGE HERE: width of funding-logo column */
   --funding-column-gap: 10px;      /* CHANGE HERE: gap between funding logos and funding text */
-  --funding-row-gap: 46px;         /* CHANGE HERE: vertical gap between ERC and SNSF rows */
+  --funding-row-gap: 50px;         /* CHANGE HERE: vertical gap between ERC and SNSF rows */
   --funding-logo-width: 150px;     /* CHANGE HERE: default size of ERC/SNSF logos */
   --funding-text-size: 16px;       /* CHANGE HERE: size of funding text */
 
