@@ -192,19 +192,19 @@ h3 {
 
 h1 {
   font-size: var(--h1-size);
-  font-weight: 560;
+  font-weight: 600;
   margin-bottom: 4px;
 }
 
 h2 {
   font-size: var(--h2-size);
-  font-weight: 520;
+  font-weight: 500;
   margin-bottom: 18px;
 }
 
 h3 {
   font-size: var(--h3-size);
-  font-weight: 720;
+  font-weight: 400;
 }
 
 .subtitle {
