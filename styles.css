@@ -1214,6 +1214,7 @@ h3 {
 }
 
 
+
 /* ========================================================================== 
    16. RESPONSIVE DESIGN: TABLETS AND PHONES
    --------------------------------------------------------------------------
@@ -1222,7 +1223,7 @@ h3 {
 
 @media (max-width: 760px) {
   body {
-    font-size: 16px; /* Slightly larger on phones for readability */
+    font-size: 16px;
   }
 
   .layout,
@@ -1262,23 +1263,24 @@ h3 {
      1. Name/title on the left, UZH logo on the upper right
      2. Portrait
      3. Biography text
-     4. Funding
-     5. Buttons
+     4. Other affiliations
+     5. Funding
+     6. Buttons
   ----------------------------------------------------------------------- */
 
   .intro-grid,
   .home-intro-combined {
     grid-template-columns: minmax(0, 1fr) auto;
     column-gap: 16px;
-    row-gap: 4px; /* CHANGE HERE: space between name and subtitle */
+    row-gap: 4px;
   }
 
-  /* Allows the h1, subtitle, rule, and bio text to be positioned separately */
+  /* Allows h1, subtitle, rule, and bio text to be positioned separately */
   .home-intro-combined .intro-text {
     display: contents;
   }
 
-  /* Allows the UZH logo and portrait to be positioned separately */
+  /* Allows UZH logo and portrait to be positioned separately */
   .home-intro-combined .intro-media {
     display: contents;
   }
@@ -1297,7 +1299,6 @@ h3 {
     margin-bottom: 0;
   }
 
-  /* UZH logo: upper-right corner on mobile */
   .home-intro-combined .uzh-logo {
     order: 1;
     grid-column: 2;
@@ -1306,11 +1307,10 @@ h3 {
     justify-self: end;
     align-self: start;
 
-    width: min(150px, 36vw); /* CHANGE HERE: mobile UZH logo size */
+    width: min(150px, 36vw);
     margin-top: 2px;
   }
 
-  /* Portrait: centered below the name/title/logo area */
   .home-intro-combined .hero-portrait {
     order: 3;
     grid-column: 1 / -1;
@@ -1331,31 +1331,92 @@ h3 {
     margin-top: 28px;
   }
 
-  .funding-strip {
+
+  /* Other affiliations on mobile -----------------------------------------
+     This fixes the broken two-column layout.
+  ----------------------------------------------------------------------- */
+
+  .affiliations-section {
     order: 6;
     grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+
+    padding: 26px 0;
+    margin-top: 26px;
+    margin-bottom: 0;
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
   }
 
-  .profile-buttons {
-    order: 7;
-    grid-column: 1 / -1;
+  .affiliations-section h3 {
+    margin: 0;
+  }
+
+  .square-list {
+    margin: 0;
+    padding: 0;
+  }
+
+  .square-list li {
+    margin-bottom: 8px;
+    padding-left: 16px;
+    line-height: 1.45;
+  }
+
+  .square-list li:last-child {
+    margin-bottom: 0;
   }
 
 
   /* Funding section on mobile -------------------------------------------- */
 
+  .funding-strip {
+    order: 7;
+    grid-column: 1 / -1;
+
+    padding-top: 26px;
+    padding-bottom: 42px;
+
+    margin-top: 0;
+    margin-bottom: 34px;
+
+    border-bottom: 1px solid var(--line);
+  }
+
   .funding-row {
     grid-template-columns: 1fr;
-    gap: 18px;
-    margin-bottom: 34px;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+
+  .funding-row:last-child {
+    margin-bottom: 0;
   }
 
   .funding-logo-cell {
     justify-content: flex-start;
   }
 
+  .funding-logo {
+    max-width: 150px;
+  }
+
   .funding-text-cell p {
     font-size: var(--funding-text-size);
+    line-height: 1.55;
+  }
+
+
+  /* Profile buttons on mobile -------------------------------------------- */
+
+  .profile-buttons {
+    order: 8;
+    grid-column: 1 / -1;
+    justify-content: center;
   }
 
 
@@ -1373,11 +1434,6 @@ h3 {
 
   /* -----------------------------------------------------------------------
      MOBILE RESEARCH CARDS
-     -----------------------------------------------------------------------
-     On mobile, cards with journal logos use two columns:
-     - left: paper text and buttons
-     - right: journal logo
-     Media coverage, when present, spans below both.
   ----------------------------------------------------------------------- */
 
   .paper-card {
@@ -1387,7 +1443,6 @@ h3 {
     padding-bottom: var(--paper-card-padding-y);
   }
 
-  /* Cards with a journal logo */
   .paper-card:has(.paper-logo-cell) {
     grid-template-columns: minmax(0, 1fr) auto;
     column-gap: 12px;
@@ -1405,7 +1460,7 @@ h3 {
     grid-row: 1;
 
     justify-self: end;
-    align-self: start; /* CHANGE HERE: use center/end if you want it lower */
+    align-self: start;
 
     min-width: 0;
     width: auto;
@@ -1417,7 +1472,6 @@ h3 {
     max-height: 52px;
   }
 
-  /* Media coverage box spans full card width below text + journal logo */
   .paper-card > .coverage-groups {
     grid-column: 1 / -1;
     grid-row: auto;
