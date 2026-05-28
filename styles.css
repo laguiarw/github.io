@@ -33,100 +33,168 @@
    ========================================================================== */
 
 :root {
-  /* Main colors ------------------------------------------------------------ */
-  --blue: rgb(35, 79, 210);                 /* CHANGE HERE: blue used for links, active nav, paper titles */
-  --lightblueBG: #eef2fc;                 /* CHANGE HERE: blue used for links, active nav, paper titles */
-  --ink: rgb(51, 51, 51);                  /* Main text color */
-  --muted: #777777;                /* Grey text, subtitles, metadata */
-  --line: #e7e7e2;                 /* Thin dividers and subtle borders */
-  --light: rgb(247, 247, 245);                /* Light background for notes and cards */
-  --card-bg: #e8e8e8e7;              /* Background of paper cards/buttons */
-  --card-border: #e4e1da;          /* Border of paper cards/buttons */
-  --card-border2: rgba(48,98,255,.22);
-  /* Fonts ----------------------------------------------------------------- */
-  /* CHANGE HERE: main font for the whole site. */
-  /* --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, Helvetica, sans-serif; */
+  /* ========================================================================
+     MAIN COLORS
+     ------------------------------------------------------------------------
+     Change these only if you want to change the visual identity of the site.
+     ======================================================================== */
+  --blue: rgb(35, 79, 210);              /* Main blue: paper titles, hover states, active elements */
+  --lightblueBG: #eef2fc;                /* Very light blue: button hover background */
+  --ink: rgb(51, 51, 51);                /* Main body text color */
+  --muted: #777777;                      /* Grey text: subtitles, metadata, labels */
+  --line: #e7e7e2;                       /* Default subtle divider line color */
+  --light: rgb(247, 247, 245);           /* Light neutral background */
+  --card-bg: #e8e8e8e7;                  /* Legacy card background */
+  --card-border: #e4e1da;                /* Legacy card border */
+  --card-border2: rgba(48, 98, 255, .22);/* Subtle blue border used on cards/buttons */
+
+  /* ========================================================================
+     FONT
+     ------------------------------------------------------------------------
+     Make sure DM Sans is loaded in your HTML if you use it here.
+     ======================================================================== */
   --sans: "DM Sans", sans-serif;
 
-  /* Page width and side padding ------------------------------------------ */
-  --max: 1080px;                   /* CHANGE HERE: maximum width of page content */
-  --side-padding: 28px;            /* CHANGE HERE: left/right page padding on desktop */
-  --side-padding-mobile: 20px;     /* CHANGE HERE: left/right page padding on phones */
+  /* ========================================================================
+     PAGE WIDTH AND SIDE PADDING
+     ------------------------------------------------------------------------
+     --max controls the maximum width of the content area.
+     --side-padding controls the left/right padding inside that area.
+     ======================================================================== */
+  --max: 1080px;
+  --side-padding: 28px;
+  --side-padding-mobile: 20px;
 
-  /* Header ---------------------------------------------------------------- */
-  --header-logo-width: 44px;       /* CHANGE HERE: size of small LA logo in header */
-  --header-padding-y: 20px;        /* CHANGE HERE: vertical padding in top navigation bar */
-  --nav-font-size: 17px;           /* CHANGE HERE: navigation link size */
-  --nav-gap: 20px;                 /* CHANGE HERE: space between navigation links */
+  /* ========================================================================
+     HEADER / NAVIGATION
+     ======================================================================== */
+  --header-logo-width: 44px;             /* Size of the LA logo in the header */
+  --header-padding-y: 20px;              /* Vertical padding of the header */
+  --nav-font-size: 17px;                 /* Navigation text size */
+  --nav-gap: 20px;                       /* Space between nav items */
 
-  /* Homepage intro layout ------------------------------------------------- */
-  --home-top-space: 44px;          /* CHANGE HERE: space between header and homepage intro */
-  --home-right-column: 360px;      /* CHANGE HERE: width of right column with logo + portrait */
-  --home-column-gap: 54px;         /* CHANGE HERE: horizontal gap between text and portrait column */
-  --home-row-gap: 18px;            /* CHANGE HERE: vertical gap between intro rows, e.g. before funding */
-  --bio-top-space: 36px;           /* CHANGE HERE: space between horizontal line and biography text */
-  --home-section-spacing: 34px;   /* CHANGE HERE: consistent spacing around homepage divider lines */
+  /* ========================================================================
+     HOMEPAGE GRID
+     ------------------------------------------------------------------------
+     The homepage has a left text column and a right image/logo column.
+     ======================================================================== */
+  --home-top-space: 60px;                /* Space between header and homepage content */
+  --home-right-column: 360px;            /* Width of the right column: UZH logo/portrait */
+  --home-column-gap: 54px;               /* Horizontal gap between left and right columns */
+  --home-row-gap: 20px;                  /* General vertical gap between homepage grid rows */
 
-  /* Homepage images ------------------------------------------------------- */
-  --uzh-logo-width: 170px;         /* CHANGE HERE: size of UZH logo above portrait */
-  --portrait-width: 260px;         /* CHANGE HERE: portrait size */
-  --portrait-radius: 5px;          /* CHANGE HERE: portrait corner roundness */
-  --image-gap: 36px;               /* CHANGE HERE: gap between UZH logo and portrait */
-  --portrait-shift-y: 30px;        /* CHANGE HERE: move portrait down/up. Positive = down, negative = up */
+  /* ========================================================================
+     HOMEPAGE BIO + PORTRAIT BAND
+     ------------------------------------------------------------------------
+     This is the block containing the biography text on the left and portrait
+     on the right, between two horizontal lines.
+     ======================================================================== */
+  --intro-line-width: 610px;             /* Width of the left bio column and top intro line.
+                                            With the current layout this equals:
+                                            1080 - 2*28 - 360 - 54 = 610px. */
+  --intro-band-top-space: 10px;          /* Space above the top line of the bio/portrait band */
+  --intro-band-padding-y: 40px;          /* Space between each bio-band line and the bio/portrait content */
 
-  /* Text sizes ------------------------------------------------------------ */
-  --body-font-size: 16px;          /* CHANGE HERE: main paragraph text size */
-  --h1-size: 22px;                 /* CHANGE HERE: main page title size */
-  --h2-size: 18px;                 /* CHANGE HERE: section heading size */
-  --h3-size: 17px;                 /* CHANGE HERE: small heading size */
-  --subtitle-size: 17px;           /* CHANGE HERE: subtitle under name on homepage */
+  /* ========================================================================
+     HOMEPAGE HORIZONTAL LINES
+     ------------------------------------------------------------------------
+     There are four homepage lines:
+       - intro top line: controlled by --intro-line-width
+       - line 1: bottom of bio/portrait band, above Other Affiliations
+       - line 2: between Other Affiliations and Funding
+       - line 3: below Funding
 
-  /* Profile/link buttons -------------------------------------------------- */
-  --button-font-size: 15px;        /* CHANGE HERE: profile/research link button text size */
-  --button-radius: 6px;            /* CHANGE HERE: roundness of profile/research buttons */
-  --button-gap: 12px;              /* CHANGE HERE: gap between profile/research buttons */
+     Use 0 to hide a line, e.g. --home-line-3-width: 0;
+     Use 100% for full content width.
+     Use var(--intro-line-width) to match the bio text line.
+     ======================================================================== */
+  --home-line-color: var(--lightblueBG);        /* Color of these homepage horizontal lines */
+  --home-line-1-width: var(--intro-line-width);
+  --home-line-2-width: 100%;
+  --home-line-3-width: 0;
+  --home-line-left: 0;                   /* 0 = starts at same left edge as intro/footer lines */
+  --home-line-translate-x: 0;            /* Use -50% only when --home-line-left is 50% */
 
-  /* Funding strip --------------------------------------------------------- */
-  --funding-top-space: 40px;        /* CHANGE HERE: space above funding block */
-  --funding-bottom-space: 60px;    /* CHANGE HERE: space below funding block */
-  --funding-logo-column: 190px;    /* CHANGE HERE: width of funding-logo column */
-  --funding-column-gap: 10px;      /* CHANGE HERE: gap between funding logos and funding text */
-  --funding-row-gap: 50px;         /* CHANGE HERE: vertical gap between ERC and SNSF rows */
-  --funding-logo-width: 150px;     /* CHANGE HERE: default size of ERC/SNSF logos */
-  --funding-text-size: 16px;       /* CHANGE HERE: size of funding text */
+  /* ========================================================================
+     HOMEPAGE IMAGES
+     ======================================================================== */
+  --uzh-logo-width: 170px;               /* Size of UZH logo */
+  --portrait-width: 260px;               /* Portrait width */
+  --portrait-radius: 5px;                /* Portrait corner roundness */
+  --image-gap: 36px;                     /* Fallback gap between image elements */
 
-  /* Research page / paper cards ------------------------------------------ */
-  --paper-card-padding-y: 15px;    /* CHANGE HERE: vertical padding inside each paper box */
-  --paper-card-padding-x: 17px;    /* CHANGE HERE: horizontal padding inside each paper box */
-  --paper-card-radius: 5px;        /* CHANGE HERE: corner roundness of paper boxes */
-  --paper-card-gap: 20px;          /* CHANGE HERE: vertical gap between paper boxes */
-  --paper-card-background: rgb(209, 209, 209, 0.055); /* CHANGE HERE: background color of paper card */
+  /* ========================================================================
+     TEXT SIZES
+     ======================================================================== */
+  --body-font-size: 16px;
+  --h1-size: 22px;
+  --h2-size: 18px;
+  --h3-size: 17px;
+  --subtitle-size: 17px;
 
-  
-  --paper-title-size: 16px;      /* CHANGE HERE: paper title size */
-  --paper-title-weight: 550;       /* CHANGE HERE: paper title boldness */
-  --paper-meta-size: 14.5px;       /* CHANGE HERE: authors/journal text size */
-  --journal-logo-width: 96px;      /* CHANGE HERE: journal logo width inside paper card */
-  --journal-logo-height: 100px;     /* CHANGE HERE: journal logo max height inside paper card */
+  /* ========================================================================
+     HOMEPAGE: OTHER AFFILIATIONS
+     ------------------------------------------------------------------------
+     Controls the two-column layout of the Other Affiliations block on desktop.
+     ======================================================================== */
+  --affiliations-label-column: 170px;    /* Width of the left label column */
+  --affiliations-column-gap: 1px;       /* Gap between label and affiliation list */
+  --affiliations-padding-y: 34px;        /* Space above/below the affiliation content, inside the lines */
+
+  /* ========================================================================
+     HOMEPAGE: FUNDING STRIP
+     ------------------------------------------------------------------------
+     These values now actually control the funding block.
+     ======================================================================== */
+  --funding-top-space: 40px;             /* Space between line 2 and the first funding row */
+  --funding-bottom-space: 40px;          /* Space between last funding row and line 3 */
+  --funding-logo-column: 190px;          /* Width reserved for the funding logos */
+  --funding-column-gap: 10px;            /* Horizontal gap between logo column and funding text */
+  --funding-row-gap: 50px;               /* Vertical gap between ERC row and SNSF row */
+  --funding-logo-width: 150px;           /* Maximum funding logo width */
+  --funding-text-size: 16px;             /* Funding text size */
+  --after-funding-line-space: 34px;      /* Space between line 3 and the profile buttons */
+
+  /* ========================================================================
+     PROFILE / EXTERNAL LINK BUTTONS
+     ======================================================================== */
+  --button-font-size: 15px;
+  --button-radius: 6px;
+  --button-gap: 12px;
+
+  /* ========================================================================
+     RESEARCH PAGE / PAPER CARDS
+     ======================================================================== */
+  --paper-card-padding-y: 15px;
+  --paper-card-padding-x: 17px;
+  --paper-card-radius: 5px;
+  --paper-card-gap: 20px;
+  --paper-card-background: rgb(209, 209, 209, 0.055);
+  --paper-title-size: 16px;
+  --paper-title-weight: 550;
+  --paper-meta-size: 14.5px;
+  --journal-logo-width: 96px;
+  --journal-logo-height: 100px;
 
   /* Paper-card action buttons -------------------------------------------- */
-  --paper-link-font-size: 12.5px;  /* CHANGE HERE: DOI/WP button text size inside paper cards */
-  --paper-link-radius: 4px;        /* CHANGE HERE: DOI/WP button roundness; 999px = pill shape */
-  --paper-link-padding-y: 3px;     /* CHANGE HERE: vertical padding inside DOI/WP buttons */
-  --paper-link-padding-x: 9px;     /* CHANGE HERE: horizontal padding inside DOI/WP buttons */
-  --paper-link-gap: 7px;           /* CHANGE HERE: gap between DOI/WP buttons */
+  --paper-link-font-size: 12.5px;
+  --paper-link-radius: 4px;
+  --paper-link-padding-y: 3px;
+  --paper-link-padding-x: 9px;
+  --paper-link-gap: 7px;
 
-  /* Media coverage page --------------------------------------------------- */
-  --coverage-group-gap: 12px;      /* CHANGE HERE: vertical gap between language groups inside a card */
-  --coverage-label-width: 42px;    /* CHANGE HERE: width reserved for language labels. This is the space between language and the buttons */
-  --coverage-label-size: 12px;     /* CHANGE HERE: language label size, e.g. English, German */
-  --coverage-label-weight: 650;    /* CHANGE HERE: language label boldness */
-  --coverage-box-bg: rgba(35, 79, 210, 0.02);      /*  CHANGE HERE: subtle background behind media coverage links */
-  /* --coverage-box-bg: rgb(209, 209, 209, 0.035);       CHANGE HERE: subtle background behind media coverage links */
-  --coverage-box-border: rgba(35, 79, 210, 0.14);    /* CHANGE HERE: subtle border around media coverage block */
-  --coverage-box-left-border: rgba(35, 79, 210, 0.35); /* CHANGE HERE: slightly stronger left accent for media block */
-  --coverage-button-border: rgba(35, 79, 210, 0.28); /* CHANGE HERE: border color for media outlet buttons */
-  --coverage-button-color: #5a557f;                  /* CHANGE HERE: text color for media outlet buttons */
+  /* ========================================================================
+     MEDIA COVERAGE
+     ======================================================================== */
+  --coverage-group-gap: 12px;
+  --coverage-label-width: 42px;
+  --coverage-label-size: 12px;
+  --coverage-label-weight: 650;
+  --coverage-box-bg: rgba(35, 79, 210, 0.02);
+  --coverage-box-border: rgba(35, 79, 210, 0.14);
+  --coverage-box-left-border: rgba(35, 79, 210, 0.35);
+  --coverage-button-border: rgba(35, 79, 210, 0.28);
+  --coverage-button-color: #5a557f;
 }
 
 
@@ -357,49 +425,124 @@ h3 {
 
 
 /* ========================================================================== 
-   6. HOMEPAGE INTRO: TEXT + UZH LOGO + PORTRAIT
+   6. HOMEPAGE INTRO: NAME, UZH LOGO, BIO TEXT, AND PORTRAIT
    --------------------------------------------------------------------------
    Expected homepage structure:
 
    <section class="intro-grid home-intro-combined">
-     <div class="intro-text">
-       <h1>...</h1>
-       <p class="subtitle">...</p>
-       <hr class="intro-rule">
-       <div class="bio-copy">...</div>
+     <div class="intro-text"> ... name + subtitle ... </div>
+     <aside class="intro-side intro-media"> ... UZH logo ... </aside>
+
+     <div class="intro-body-band">
+       <div class="bio-copy"> ... biography paragraphs ... </div>
+       <div class="portrait-cell"> ... portrait ... </div>
      </div>
-     <aside class="intro-side intro-media"> ... logo + portrait ... </aside>
+
+     <section class="content-section affiliations-section">...</section>
      <div class="funding-strip">...</div>
      <div class="profile-buttons">...</div>
    </section>
+
+   The `.intro-body-band` creates the two horizontal lines around the bio text
+   and portrait. `align-items: center` vertically centers the bio text and
+   portrait between those two lines.
    ========================================================================== */
 
 .intro-grid,
 .home-intro-combined {
   display: grid;
   grid-template-columns: minmax(0, 1fr) var(--home-right-column);
-  column-gap: var(--home-column-gap); /* Horizontal gap between text and image column */
-  row-gap: var(--home-row-gap);       /* Vertical gap before funding/buttons rows */
+  column-gap: var(--home-column-gap);
+  row-gap: var(--home-row-gap);
   align-items: start;
   padding-bottom: 56px;
-  border-bottom: none;
+}
+
+/* Left column: name + subtitle ------------------------------------------ */
+.intro-text {
+  grid-column: 1;
 }
 
 .intro-text p {
-  max-width: 680px;                    /* CHANGE HERE: width of homepage paragraphs */
+  max-width: 680px;
 }
 
+/* Old <hr class="intro-rule"> is no longer used. The top line is generated
+   by `.intro-body-band::before` so that the bio and portrait share the same
+   pair of horizontal lines. */
 .intro-rule {
-  border: 0;
-  border-top: 1px solid var(--line);   /* CHANGE HERE: horizontal line color/thickness */
-  margin: 50px 0 0;                    /* CHANGE HERE: space above the line */
+  display: none;
+}
+
+/* Right column: UZH logo -------------------------------------------------
+   The UZH logo and the portrait must share the same horizontal center.
+   The portrait is centered by `.portrait-cell`; this block centers the UZH
+   logo inside the same right-hand grid column.
+-------------------------------------------------------------------------- */
+.intro-side,
+.intro-media {
+  grid-column: 2;
+  width: 100%;                    /* Use the full right column as the alignment area */
+  display: flex;
+  align-items: flex-start;        /* Vertical alignment within the row */
+  justify-content: center;        /* Horizontal centering within the right column */
+  padding-top: 0;
+}
+
+.uzh-logo {
+  width: min(100%, var(--uzh-logo-width));
+  margin-left: auto;              /* Keeps logo centered if browser handles image width oddly */
+  margin-right: auto;
+}
+
+/* Bio + portrait band ----------------------------------------------------
+   This full-width grid row contains the bio text on the left and portrait on
+   the right. The two pseudo-elements create the horizontal lines.
+-------------------------------------------------------------------------- */
+.intro-body-band {
+  grid-column: 1 / -1;
+
+  display: grid;
+  grid-template-columns: minmax(0, var(--intro-line-width)) var(--home-right-column);
+  column-gap: var(--home-column-gap);
+  align-items: center;
+
+  position: relative;
+  margin-top: var(--intro-band-top-space);
+  padding: var(--intro-band-padding-y) 0;
+}
+
+/* Top line above the bio/portrait band. */
+.intro-body-band::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--home-line-left);
+  width: min(100%, var(--intro-line-width));
+  height: 1px;
+  background: var(--lightblueBG);
+  transform: translateX(var(--home-line-translate-x));
+}
+
+/* Line 1: bottom of bio/portrait band and top line above Other Affiliations. */
+.intro-body-band::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: var(--home-line-left);
+  width: min(100%, var(--home-line-1-width));
+  height: 1px;
+  background: var(--lightblueBG);
+  transform: translateX(var(--home-line-translate-x));
 }
 
 .bio-copy {
-  margin-top: var(--bio-top-space);    /* Space between line and biography text */
+  max-width: var(--intro-line-width);
+  margin: 0;
 }
 
 .bio-copy p {
+  max-width: 100%;
   font-size: var(--body-font-size);
   line-height: 1.62;
 }
@@ -410,23 +553,16 @@ h3 {
   /* hyphens: auto; */
 }
 
-.intro-side,
-.intro-media {
+.portrait-cell {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: var(--image-gap);               /* Space between UZH logo and portrait */
-  padding-top: 0;
-}
-
-.uzh-logo {
-  width: min(100%, var(--uzh-logo-width));
+  justify-content: center;
 }
 
 .hero-portrait {
   width: min(100%, var(--portrait-width));
   border-radius: var(--portrait-radius);
-  transform: translateY(var(--portrait-shift-y));
+  transform: none;
 }
 
 /* Old text-link row. Kept for compatibility, but profile-buttons are preferred. */
@@ -446,93 +582,129 @@ h3 {
 /* ==========================================================================
    7. HOMEPAGE AFFILIATIONS AND FUNDING STRIP
    --------------------------------------------------------------------------
-   Controls the "Other Affiliations" block and the funding block below it.
-   Uses simple borders and padding so the spacing stays predictable.
+   The homepage uses three visible divider lines after the intro:
+     - Line 1: `.intro-body-band::after`
+     - Line 2: `.affiliations-section::after`
+     - Line 3: `.funding-strip::after`
+
+   The line lengths are controlled in SECTION 1 with:
+     --home-line-1-width
+     --home-line-2-width
+     --home-line-3-width
    ========================================================================== */
 
-/* Other Affiliations block ------------------------------------------------ */
-
-.affiliations-section {
+/* Other Affiliations block ------------------------------------------------
+   This is deliberately specific because the HTML also uses `.content-section`.
+-------------------------------------------------------------------------- */
+.content-section.affiliations-section {
   grid-column: 1 / -1;
   width: 100%;
 
   display: grid;
-  grid-template-columns: 210px minmax(0, 1fr);
-  gap: 52px;
+  grid-template-columns:
+    var(--affiliations-label-column)
+    minmax(0, calc(var(--intro-line-width) - var(--affiliations-label-column) - var(--affiliations-column-gap)));
+  column-gap: var(--affiliations-column-gap);
   align-items: start;
 
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  position: relative;
+  border: 0;
 
-  padding: 34px 0;
-  margin-top: 34px;
-  margin-bottom: 0;
+  padding: var(--affiliations-padding-y) 0;
+  margin: 0;
 }
 
-/* Remove default browser bullets */
+/* There is no top line here. The top line of this section is the bottom line
+   of `.intro-body-band`, which avoids duplicate lines and spacing conflicts. */
+.content-section.affiliations-section::before {
+  display: none;
+}
+
+/* Line 2: between Other Affiliations and Funding. */
+.content-section.affiliations-section::after {
+  content: "";
+  position: absolute;
+  left: var(--home-line-left);
+  bottom: 0;
+  width: min(100%, var(--home-line-2-width));
+  height: 1px;
+  background: var(--lightblueBG);
+  transform: translateX(var(--home-line-translate-x));
+}
+
+.content-section.affiliations-section h3 {
+  margin: 0;
+  line-height: 1.15;
+}
+
 .square-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* Each affiliation item */
 .square-list li {
   position: relative;
   margin: 0 0 10px;
   padding-left: 18px;
 }
 
-/* No extra space after the last item */
 .square-list li:last-child {
   margin-bottom: 0;
 }
 
-/* Minimal square bullet */
 .square-list li::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0.72em;
-
   width: 5px;
   height: 5px;
-
   background: var(--muted);
 }
 
-/* Hide accidental short horizontal rules inside the homepage grid */
+/* Safety cleanup: hide any accidental old horizontal rules inside the
+   homepage grid. */
 .bio-copy > .intro-rule:last-child,
 .home-intro-combined > hr {
   display: none;
 }
 
-
 /* Funding block ---------------------------------------------------------- */
-
 .funding-strip {
   grid-column: 1 / -1;
 
-  border-bottom: 1px solid var(--line);
+  position: relative;
+  border: 0;
 
-  padding-top: 34px;
-  padding-bottom: 56px;  /* CHANGE HERE: space between last funding row and bottom line */
+  /* These two variables now control the funding spacing. */
+  padding-top: var(--funding-top-space);
+  padding-bottom: var(--funding-bottom-space);
 
   margin-top: 0;
-  margin-bottom: 34px;
+  margin-bottom: var(--after-funding-line-space);
 }
 
-/* Each funding row */
+/* Line 3: below the funding block. Set --home-line-3-width: 0; to hide it. */
+.funding-strip::after {
+  content: "";
+  position: absolute;
+  left: var(--home-line-left);
+  bottom: 0;
+  width: min(100%, var(--home-line-3-width));
+  height: 1px;
+  background: var(--home-line-color);
+  transform: translateX(var(--home-line-translate-x));
+}
+
 .funding-row {
   display: grid;
   grid-template-columns: var(--funding-logo-column) minmax(0, 1fr);
-  gap: var(--funding-column-gap);
+  column-gap: var(--funding-column-gap);
   align-items: center;
-
-  margin-bottom: 34px;  /* CHANGE HERE: space between ERC row and SNSF row */
+  margin-bottom: var(--funding-row-gap);
 }
 
-/* No extra space after the last funding row */
 .funding-row:last-child {
   margin-bottom: 0;
 }
@@ -572,6 +744,7 @@ h3 {
   color: var(--blue);
   text-decoration-color: var(--blue);
 }
+
 
 /* ========================================================================== 
    8. PROFILE / EXTERNAL LINK BUTTONS
@@ -1214,14 +1387,30 @@ h3 {
 }
 
 
-
 /* ========================================================================== 
    16. RESPONSIVE DESIGN: TABLETS AND PHONES
    --------------------------------------------------------------------------
-   Rules below override desktop layout on smaller screens.
+   These rules override the desktop layout on smaller screens.
+   The mobile spacing values are grouped at the top of the media query so you
+   do not need to hunt through the CSS.
    ========================================================================== */
 
 @media (max-width: 760px) {
+  :root {
+    /* Mobile homepage spacing --------------------------------------------- */
+    --mobile-title-subtitle-gap: 4px;          /* Space between name and subtitle */
+    --mobile-title-body-gap: 34px;             /* Space between title/logo area and bio/portrait band */
+    --mobile-body-padding-y: 34px;             /* Space inside the two bio/portrait lines */
+    --mobile-portrait-bio-gap: 30px;           /* Space between portrait and bio text */
+
+    --mobile-affiliations-padding-y: 32px;     /* Space inside Other Affiliations */
+    --mobile-affiliations-funding-gap: 36px;   /* Space between line 2 and first funding row */
+    --mobile-funding-logo-text-gap: 14px;      /* Space between funding logo and funding text */
+    --mobile-funding-row-gap: 38px;            /* Space between ERC and SNSF rows */
+    --mobile-funding-bottom-gap: 50px;         /* Space between SNSF row and line 3 */
+    --mobile-after-funding-line-space: 36px;   /* Space between line 3 and profile buttons */
+  }
+
   body {
     font-size: 16px;
   }
@@ -1255,105 +1444,86 @@ h3 {
     gap: 28px;
   }
 
-
-  /* -----------------------------------------------------------------------
-     MOBILE HOMEPAGE
-     -----------------------------------------------------------------------
-     Order:
-     1. Name/title on the left, UZH logo on the upper right
-     2. Portrait
-     3. Biography text
-     4. Other affiliations
-     5. Funding
-     6. Buttons
-  ----------------------------------------------------------------------- */
+  /* Mobile homepage order:
+     1. name/subtitle on the left and UZH logo on the right
+     2. portrait above bio text
+     3. Other Affiliations
+     4. Funding
+     5. buttons ------------------------------------------------------------ */
 
   .intro-grid,
   .home-intro-combined {
     grid-template-columns: minmax(0, 1fr) auto;
     column-gap: 16px;
-    row-gap: 4px;
+    row-gap: var(--mobile-title-subtitle-gap);
   }
 
-  /* Allows h1, subtitle, rule, and bio text to be positioned separately */
   .home-intro-combined .intro-text {
-    display: contents;
-  }
-
-  /* Allows UZH logo and portrait to be positioned separately */
-  .home-intro-combined .intro-media {
-    display: contents;
-  }
-
-  .home-intro-combined .intro-text > h1 {
     order: 1;
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .home-intro-combined .intro-text > h1,
+  .home-intro-combined .intro-text > .subtitle {
     margin-bottom: 0;
   }
 
-  .home-intro-combined .intro-text > .subtitle {
+  .home-intro-combined .intro-media {
     order: 2;
-    grid-column: 1;
-    grid-row: 2;
-    margin-bottom: 0;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: start;
+    justify-self: end;
   }
 
   .home-intro-combined .uzh-logo {
-    order: 1;
-    grid-column: 2;
-    grid-row: 1 / span 2;
-
-    justify-self: end;
-    align-self: start;
-
     width: min(150px, 36vw);
     margin-top: 2px;
   }
 
-  .home-intro-combined .hero-portrait {
+  .home-intro-combined .intro-body-band {
     order: 3;
     grid-column: 1 / -1;
-
-    justify-self: center;
-    transform: none;
-    margin-top: 18px;
+    grid-template-columns: 1fr;
+    row-gap: var(--mobile-portrait-bio-gap);
+    column-gap: 0;
+    margin-top: var(--mobile-title-body-gap);
+    padding: var(--mobile-body-padding-y) 0;
   }
 
-  .home-intro-combined .intro-text > .intro-rule {
-    order: 4;
-    grid-column: 1 / -1;
+  .home-intro-combined .portrait-cell {
+    order: 1;
+    justify-content: center;
   }
 
   .home-intro-combined .bio-copy {
-    order: 5;
-    grid-column: 1 / -1;
-    margin-top: 28px;
+    order: 2;
+    max-width: none;
+    margin: 0;
   }
 
+  .home-intro-combined .hero-portrait {
+    transform: none;
+  }
 
-  /* Other affiliations on mobile -----------------------------------------
-     This fixes the broken two-column layout.
-  ----------------------------------------------------------------------- */
-
-  .affiliations-section {
-    order: 6;
+  /* Mobile Other Affiliations: one column so the label and list do not get
+     squeezed or misaligned. */
+  .content-section.affiliations-section {
+    order: 4;
     grid-column: 1 / -1;
-
     display: grid;
     grid-template-columns: 1fr;
     gap: 14px;
-
-    padding: 26px 0;
-    margin-top: 26px;
-    margin-bottom: 0;
-
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    padding: var(--mobile-affiliations-padding-y) 0;
+    margin: 0;
+    position: relative;
+    border: 0;
   }
 
-  .affiliations-section h3 {
+  .content-section.affiliations-section h3 {
     margin: 0;
+    line-height: 1.15;
   }
 
   .square-list {
@@ -1371,26 +1541,22 @@ h3 {
     margin-bottom: 0;
   }
 
-
-  /* Funding section on mobile -------------------------------------------- */
-
+  /* Mobile Funding -------------------------------------------------------- */
   .funding-strip {
-    order: 7;
+    order: 5;
     grid-column: 1 / -1;
-
-    padding-top: 26px;
-    padding-bottom: 42px;
-
+    position: relative;
+    border: 0;
+    padding-top: var(--mobile-affiliations-funding-gap);
+    padding-bottom: var(--mobile-funding-bottom-gap);
     margin-top: 0;
-    margin-bottom: 34px;
-
-    border-bottom: 1px solid var(--line);
+    margin-bottom: var(--mobile-after-funding-line-space);
   }
 
   .funding-row {
     grid-template-columns: 1fr;
-    gap: 12px;
-    margin-bottom: 30px;
+    row-gap: var(--mobile-funding-logo-text-gap);
+    margin-bottom: var(--mobile-funding-row-gap);
   }
 
   .funding-row:last-child {
@@ -1402,7 +1568,7 @@ h3 {
   }
 
   .funding-logo {
-    max-width: 150px;
+    max-width: var(--funding-logo-width);
   }
 
   .funding-text-cell p {
@@ -1410,18 +1576,16 @@ h3 {
     line-height: 1.55;
   }
 
-
-  /* Profile buttons on mobile -------------------------------------------- */
-
+  /* Mobile profile buttons ----------------------------------------------- */
   .profile-buttons {
-    order: 8;
+    order: 6;
     grid-column: 1 / -1;
     justify-content: center;
+    margin-top: 0;
+    padding-top: 0;
   }
 
-
   /* Generic one-column layouts on mobile --------------------------------- */
-
   .columns {
     grid-template-columns: 1fr;
   }
@@ -1431,11 +1595,7 @@ h3 {
     gap: 2px;
   }
 
-
-  /* -----------------------------------------------------------------------
-     MOBILE RESEARCH CARDS
-  ----------------------------------------------------------------------- */
-
+  /* Mobile research cards ------------------------------------------------- */
   .paper-card {
     grid-template-columns: 1fr;
     gap: 10px;
@@ -1458,10 +1618,8 @@ h3 {
     position: static;
     grid-column: 2;
     grid-row: 1;
-
     justify-self: end;
     align-self: start;
-
     min-width: 0;
     width: auto;
     margin-left: 8px;
@@ -1488,9 +1646,7 @@ h3 {
     margin-top: 0;
   }
 
-
-  /* Contact page on mobile ------------------------------------------------ */
-
+  /* Mobile contact page --------------------------------------------------- */
   .contact-cards-single {
     max-width: none;
   }
@@ -1500,7 +1656,6 @@ h3 {
     gap: 2px;
   }
 }
-
 
 @media (max-width: 520px) {
   :root {
