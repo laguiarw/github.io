@@ -13,7 +13,7 @@
    4.  Header and navigation
    5.  General page layout
    6.  Homepage intro: text, UZH logo, portrait
-   7.  Homepage funding strip
+   7.  Homepage affiliations and funding strip
    8.  Profile/link buttons
    9.  Standard content sections and notes
    10. Research page, paper cards, and paper-link buttons
@@ -36,7 +36,7 @@
   /* Main colors ------------------------------------------------------------ */
   --blue: rgb(35, 79, 210);                 /* CHANGE HERE: blue used for links, active nav, paper titles */
   --lightblueBG: #eef2fc;                 /* CHANGE HERE: blue used for links, active nav, paper titles */
-  --ink: #333;                  /* Main text color */
+  --ink: rgb(51, 51, 51);                  /* Main text color */
   --muted: #777777;                /* Grey text, subtitles, metadata */
   --line: #e7e7e2;                 /* Thin dividers and subtle borders */
   --light: rgb(247, 247, 245);                /* Light background for notes and cards */
@@ -65,19 +65,20 @@
   --home-column-gap: 54px;         /* CHANGE HERE: horizontal gap between text and portrait column */
   --home-row-gap: 18px;            /* CHANGE HERE: vertical gap between intro rows, e.g. before funding */
   --bio-top-space: 36px;           /* CHANGE HERE: space between horizontal line and biography text */
+  --home-section-spacing: 34px;   /* CHANGE HERE: consistent spacing around homepage divider lines */
 
   /* Homepage images ------------------------------------------------------- */
   --uzh-logo-width: 170px;         /* CHANGE HERE: size of UZH logo above portrait */
-  --portrait-width: 270px;         /* CHANGE HERE: portrait size */
+  --portrait-width: 260px;         /* CHANGE HERE: portrait size */
   --portrait-radius: 5px;          /* CHANGE HERE: portrait corner roundness */
   --image-gap: 36px;               /* CHANGE HERE: gap between UZH logo and portrait */
-  --portrait-shift-y: 60px;        /* CHANGE HERE: move portrait down/up. Positive = down, negative = up */
+  --portrait-shift-y: 30px;        /* CHANGE HERE: move portrait down/up. Positive = down, negative = up */
 
   /* Text sizes ------------------------------------------------------------ */
   --body-font-size: 16px;          /* CHANGE HERE: main paragraph text size */
   --h1-size: 22px;                 /* CHANGE HERE: main page title size */
   --h2-size: 18px;                 /* CHANGE HERE: section heading size */
-  --h3-size: 15px;                 /* CHANGE HERE: small heading size */
+  --h3-size: 17px;                 /* CHANGE HERE: small heading size */
   --subtitle-size: 17px;           /* CHANGE HERE: subtitle under name on homepage */
 
   /* Profile/link buttons -------------------------------------------------- */
@@ -205,6 +206,11 @@ h2 {
 h3 {
   font-size: var(--h3-size);
   font-weight: 500;
+  color: var(--ink);
+  /* color: rgb(107, 107, 138); */
+  /* text-transform: small-caps; */
+  font-variant: small-caps;
+
 }
 
 .subtitle {
@@ -437,27 +443,96 @@ h3 {
 }
 
 
-/* ========================================================================== 
-   7. HOMEPAGE FUNDING STRIP
+/* ==========================================================================
+   7. HOMEPAGE AFFILIATIONS AND FUNDING STRIP
    --------------------------------------------------------------------------
-   Two-column block below the homepage intro:
-   left column = funding logos; right column = text.
+   Controls the "Other Affiliations" block and the funding block below it.
+   Uses simple borders and padding so the spacing stays predictable.
    ========================================================================== */
 
-.funding-strip {
-  grid-column: 1 / -1;                 /* Span across both homepage columns */
-  margin-top: var(--funding-top-space);
-  margin-bottom: var(--funding-bottom-space);
+/* Other Affiliations block ------------------------------------------------ */
+
+.affiliations-section {
+  grid-column: 1 / -1;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 52px;
+  align-items: start;
+
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+
+  padding: 34px 0;
+  margin-top: 34px;
+  margin-bottom: 0;
 }
 
+/* Remove default browser bullets */
+.square-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each affiliation item */
+.square-list li {
+  position: relative;
+  margin: 0 0 10px;
+  padding-left: 18px;
+}
+
+/* No extra space after the last item */
+.square-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Minimal square bullet */
+.square-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+
+  width: 5px;
+  height: 5px;
+
+  background: var(--muted);
+}
+
+/* Hide accidental short horizontal rules inside the homepage grid */
+.bio-copy > .intro-rule:last-child,
+.home-intro-combined > hr {
+  display: none;
+}
+
+
+/* Funding block ---------------------------------------------------------- */
+
+.funding-strip {
+  grid-column: 1 / -1;
+
+  border-bottom: 1px solid var(--line);
+
+  padding-top: 34px;
+  padding-bottom: 56px;  /* CHANGE HERE: space between last funding row and bottom line */
+
+  margin-top: 0;
+  margin-bottom: 34px;
+}
+
+/* Each funding row */
 .funding-row {
   display: grid;
   grid-template-columns: var(--funding-logo-column) minmax(0, 1fr);
   gap: var(--funding-column-gap);
   align-items: center;
-  margin-bottom: var(--funding-row-gap);
+
+  margin-bottom: 34px;  /* CHANGE HERE: space between ERC row and SNSF row */
 }
 
+/* No extra space after the last funding row */
 .funding-row:last-child {
   margin-bottom: 0;
 }
@@ -482,7 +557,7 @@ h3 {
 .funding-text-cell p {
   margin: 0;
   font-size: var(--funding-text-size);
-  line-height: 1.6; /* change spaceing between lines*/
+  line-height: 1.6;
   color: var(--ink);
 }
 
@@ -492,6 +567,11 @@ h3 {
   text-underline-offset: 3px;
 }
 
+.funding-text-cell a:hover,
+.funding-text-cell a:focus {
+  color: var(--blue);
+  text-decoration-color: var(--blue);
+}
 
 /* ========================================================================== 
    8. PROFILE / EXTERNAL LINK BUTTONS
@@ -1073,7 +1153,7 @@ h3 {
 .contact-card-single {
   padding: 22px 24px;
   border: 1px solid var(--card-border2);
-  border-left: 2px solid var(--card-border2);
+  /* border-left: 2px solid var(--card-border2); */
   background: var(--paper-card-background);
   border-radius: 5px;
 }
