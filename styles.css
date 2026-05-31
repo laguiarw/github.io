@@ -44,7 +44,9 @@
   --muted: #777777;                      /* Grey text: subtitles, metadata, labels */
   --line: #e7e7e2;                       /* Default subtle divider line color */
   --light: rgb(247, 247, 245);           /* Light neutral background */
-  --card-bg: #e8e8e8e7;                  /* Legacy card background */
+  --page-bg:  #fcfbf9;                    /* Page background color. Pure white is #ffffff*/
+  /* --card-bg: #e8e8e8e7;     */             /* Legacy card background */
+  --card-bg: rgba(255, 255, 255, 0.72);  /* Legacy card background */
   --card-border: #e4e1da;                /* Legacy card border */
   --card-border2: rgba(48, 98, 255, .22);/* Subtle blue border used on cards/buttons */
 
@@ -216,7 +218,8 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background: #fff;
+  /* background: #fff; */
+  background: var(--page-bg);
   font-family: var(--sans);
   font-size: var(--body-font-size);
   line-height: 1.62;
@@ -316,7 +319,8 @@ h3 {
 
 .site-header {
   border-bottom: 1px solid var(--line); /* CHANGE HERE: set to `border-bottom: 0;` to remove header line */
-  background: rgba(255, 255, 255, 0.96);
+  /* background: rgba(255, 255, 255, 0.96); */
+  background: var(--page-bg);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
@@ -781,7 +785,8 @@ h3 {
   /*border-right: 1.5px solid var(--blue);*/  /* Subtle blue accent, matches current design */
   /*border-bottom: 1.5px solid var(--blue);*/ /*Subtle blue accent, matches current design */
   border-radius: var(--button-radius);
-  background: #fff;
+  /* background: #fff; */
+  background: var(--page-bg);  
   color: #5a557f;
   text-decoration: none;
   font-size: var(--button-font-size);
@@ -1025,6 +1030,8 @@ h3 {
   grid-column: 1 / -1;
   width: 100%;
 }
+
+
 
 
 
