@@ -1066,7 +1066,8 @@ h3 {
   /* border: 1px solid var(--blue); */
   border: 1px solid var(--coverage-button-border);
   border-radius: var(--paper-link-radius);
-  background: #fff;
+  /* background: #fff; */
+  background: var(--page-bg);
   /* color: var(--blue); */
   color: var(--coverage-button-color);
   text-decoration: none;
@@ -1087,6 +1088,7 @@ h3 {
 /* Optional quieter secondary button, for example for older WP versions. */
 .paper-link-button.secondary {
   color: var(--muted);
+  background: var(--page-bg);
 }
 
 .paper-link-button.secondary:hover {
