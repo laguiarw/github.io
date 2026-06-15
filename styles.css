@@ -201,7 +201,63 @@
   --coverage-button-color: #5a557f;
 }
 
+/* ==========================================================================
+   LARGE SCREEN OVERRIDES
+   --------------------------------------------------------------------------
+   These changes apply only on wider desktop screens.
+   They keep the current laptop/mobile design mostly unchanged.
+   ========================================================================== */
 
+@media (min-width: 1300px) {
+  :root {
+    /* Wider content area on large desktop monitors */
+    --max: 1240px;
+    --side-padding: clamp(28px, 4vw, 64px);
+
+    /* Slightly larger header and navigation */
+    --header-logo-width: 50px;
+    --header-padding-y: 24px;
+    --nav-font-size: 18px;
+    --nav-gap: 24px;
+
+    /* Larger homepage layout */
+    --home-right-column: 410px;
+    --home-column-gap: 68px;
+    --home-top-space: 76px;
+
+    /* Homepage line width */
+    --intro-line-width: 640px;
+
+    /* Larger images */
+    --uzh-logo-width: 190px;
+    --portrait-width: 300px;
+
+    /* Larger text */
+    --body-font-size: 17px;
+    --h1-size: 24px;
+    --h2-size: 23px;
+    --h3-size: 19px;
+    --subtitle-size: 19px;
+
+    /* Funding and buttons */
+    --funding-text-size: 17px;
+    --button-font-size: 16px;
+
+    /* Research page / paper cards */
+    --paper-title-size: 17.5px;
+    --paper-meta-size: 15.5px;
+    --paper-card-padding-y: 18px;
+    --paper-card-padding-x: 22px;
+    --paper-card-gap: 24px;
+    --journal-logo-width: 112px;
+    --journal-logo-height: 112px;
+  }
+
+  /* Header name next to the logo */
+  .site-header .logo-link .logo-name {
+    font-size: 23px;
+  }
+}
 /* ========================================================================== 
    2. BASIC RESET AND PAGE DEFAULTS
    --------------------------------------------------------------------------
