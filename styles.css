@@ -123,7 +123,7 @@
      HOMEPAGE IMAGES
      ======================================================================== */
   --uzh-logo-width: 170px;               /* Size of UZH logo */
-  --portrait-width: 260px;               /* Portrait width */
+  --portrait-width: 230px;               /* Portrait width */
   --portrait-radius: 5px;                /* Portrait corner roundness */
   --image-gap: 36px;                     /* Fallback gap between image elements */
 
@@ -143,7 +143,7 @@
      ======================================================================== */
   --affiliations-label-column: 170px;    /* Width of the left label column */
   --affiliations-column-gap: 1px;       /* Gap between label and affiliation list */
-  --affiliations-padding-y: 34px;        /* Space above/below the affiliation content, inside the lines */
+  --affiliations-padding-y: 28px;        /* Space above/below the affiliation content, inside the lines */
 
   /* ========================================================================
      HOMEPAGE: FUNDING STRIP
@@ -156,6 +156,7 @@
   --funding-column-gap: 10px;            /* Horizontal gap between logo column and funding text */
   --funding-row-gap: 50px;               /* Vertical gap between ERC row and SNSF row */
   --funding-logo-width: 150px;           /* Maximum funding logo width */
+  --dm2-logo-width: 165px;           /* Maximum dm2 logo width */
   --funding-text-size: 16px;             /* Funding text size */
   --after-funding-line-space: 34px;      /* Space between line 3 and the profile buttons */
 
@@ -581,7 +582,7 @@ h3 {
   top: 0;
   left: var(--home-line-left);
   width: min(100%, var(--intro-line-width));
-  height: 1px;
+  height: 0.5px;
   background: var(--line);
   transform: translateX(var(--home-line-translate-x));
 }
@@ -593,7 +594,7 @@ h3 {
   bottom: 0;
   left: var(--home-line-left);
   width: min(100%, var(--home-line-1-width));
-  height: 1px;
+  height: 0.5px;
   background: var(--line);
   transform: translateX(var(--home-line-translate-x));
 }
@@ -689,7 +690,7 @@ h3 {
   left: var(--home-line-left);
   bottom: 0;
   width: min(100%, var(--home-line-2-width));
-  height: 1px;
+  height: 0.5px;
   background: var(--line);
   transform: translateX(var(--home-line-translate-x));
 }
@@ -786,6 +787,10 @@ h3 {
 .erc-logo,
 .snf-logo {
   max-width: var(--funding-logo-width);
+}
+
+.dm2-logo {
+  max-width: var(--dm2-logo-width);
 }
 
 .funding-text-cell p {
