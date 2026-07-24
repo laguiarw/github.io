@@ -156,7 +156,7 @@
   --funding-column-gap: 50px;            /* Horizontal gap between logo column and funding text */
   --funding-row-gap: 50px;               /* Vertical gap between ERC row and SNSF row */
   --funding-logo-width: 150px;           /* Maximum funding logo width */
-  --dm2-logo-width: 200px;           /* Maximum dm2 logo width */
+  --dm2-logo-width: 180px;           /* Maximum dm2 logo width */
   --funding-text-size: 16px;             /* Funding text size */
   --after-funding-line-space: 34px;      /* Space between line 3 and the profile buttons */
 
