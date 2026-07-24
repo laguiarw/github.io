@@ -153,10 +153,10 @@
   --funding-top-space: 40px;             /* Space between line 2 and the first funding row */
   --funding-bottom-space: 40px;          /* Space between last funding row and line 3 */
   --funding-logo-column: 190px;          /* Width reserved for the funding logos */
-  --funding-column-gap: 10px;            /* Horizontal gap between logo column and funding text */
+  --funding-column-gap: 50px;            /* Horizontal gap between logo column and funding text */
   --funding-row-gap: 50px;               /* Vertical gap between ERC row and SNSF row */
   --funding-logo-width: 150px;           /* Maximum funding logo width */
-  --dm2-logo-width: 165px;           /* Maximum dm2 logo width */
+  --dm2-logo-width: 200px;           /* Maximum dm2 logo width */
   --funding-text-size: 16px;             /* Funding text size */
   --after-funding-line-space: 34px;      /* Space between line 3 and the profile buttons */
 
