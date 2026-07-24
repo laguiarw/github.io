@@ -1477,7 +1477,7 @@ h3 {
 
     --mobile-affiliations-padding-y: 32px;     /* Space inside Other Affiliations */
     --mobile-affiliations-funding-gap: 36px;   /* Space between line 2 and first funding row */
-    --mobile-funding-logo-text-gap: 24px;      /* Space between funding logo and funding text */
+    --mobile-funding-logo-text-gap: 400px;      /* Space between funding logo and funding text */
     --mobile-funding-row-gap: 38px;            /* Space between ERC and SNSF rows */
     --mobile-funding-bottom-gap: 50px;         /* Space between SNSF row and line 3 */
     --mobile-after-funding-line-space: 36px;   /* Space between line 3 and profile buttons */
@@ -1640,7 +1640,7 @@ h3 {
   }
 
   .funding-logo {
-    max-width: var(--funding-logo-width);
+    max-width: var(--dm2-logo-width);
   }
 
   .funding-text-cell p {
