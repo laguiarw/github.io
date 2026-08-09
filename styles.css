@@ -358,6 +358,10 @@ h3 {
   max-width: 760px;
 }
 
+.page-intro-wide {
+  max-width: none;
+}
+
 .prose {
   max-width: 1000px;
   margin: -30px 0 24px;
