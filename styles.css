@@ -1464,7 +1464,38 @@ h3 {
 
 
 /* ========================================================================== 
-   16. RESPONSIVE DESIGN: TABLETS AND PHONES
+   16. DM2 LAB PAGE
+   ========================================================================== */
+
+.dm2-page {
+  padding-bottom: 56px;
+}
+
+.dm2-page-logo {
+  width: min(100%, 240px);
+  margin-bottom: 32px;
+}
+
+.dm2-prose {
+  max-width: 1000px;
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+.dm2-prose p {
+  font-size: var(--body-font-size);
+  line-height: 1.62;
+}
+
+.dm2-page-actions {
+  grid-column: auto;
+  justify-content: flex-start;
+  margin-top: 26px;
+  padding-top: 0;
+}
+
+/* ==========================================================================
+   17. RESPONSIVE DESIGN: TABLETS AND PHONES
    --------------------------------------------------------------------------
    These rules override the desktop layout on smaller screens.
    The mobile spacing values are grouped at the top of the media query so you
