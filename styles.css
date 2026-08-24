@@ -1487,13 +1487,6 @@ h3 {
   line-height: 1.62;
 }
 
-.dm2-page-actions {
-  grid-column: auto;
-  justify-content: flex-start;
-  margin-top: 26px;
-  padding-top: 0;
-}
-
 /* ==========================================================================
    17. RESPONSIVE DESIGN: TABLETS AND PHONES
    --------------------------------------------------------------------------
